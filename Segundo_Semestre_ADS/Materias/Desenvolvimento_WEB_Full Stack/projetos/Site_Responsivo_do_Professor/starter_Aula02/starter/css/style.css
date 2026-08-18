@@ -91,9 +91,7 @@ img {
   margin: 0 0 var(--espaco-4);
   color: var(--cor-texto-suave);
 }
-.cards-grid{
-  
-}
+
 /* ===== Grid de cards (Flexbox) =====
    TODO (Aula 02, Parte 1): sem nenhuma regra abaixo, os cards ficam
    empilhados um em cima do outro (comportamento padrão de <article>,
@@ -109,7 +107,11 @@ img {
    Dica: display: flex + flex-wrap + gap no container;
          flex-grow/flex-shrink/flex-basis + max-width no item.
 */
-
+.cards-grid{
+  display: flex;
+  gap: var(--espaco-3);
+  flex-wrap: wrap;
+}
 
 .card {
   background: var(--cor-branco);
@@ -118,7 +120,11 @@ img {
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 280px;
   transition: box-shadow 0.2s ease, transform 0.2s ease;
+  
 }
 
 .card:hover {
@@ -203,7 +209,10 @@ img {
 /* .detalhe ainda não tem nenhum estilo de layout — veja o TODO (Aula 02,
    Parte 2) mais abaixo, perto da media query, com o passo a passo
    completo. */
-
+.detalhe{
+  display: grid;
+  gap: var(--espaco-3);
+}
 .detalhe-principal,
 .detalhe-resumo,
 .detalhe-avaliacoes {
@@ -329,6 +338,19 @@ img {
    empilhado) e só depois "encaixe" o grid para telas maiores — essa é
    a essência de mobile-first.
 */
+/* a partir do pixel 760px, a página de detalhe assume duas colunas: 
+Conteúdo principal + resumo da nota ocupando toda a coluna de baixo, com as avaliações ocupando a largura toda na linha de baixo*/
+@media(min-width: 768px){
+  .detalhe{
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas: 
+    "principal resumo"
+    "avaliacoes avaliacoes";
+  }
+  .detalhe-principal{grid-area: principal;}
+  .detalhe-resumo{grid-area: resumo;}
+  .detalhe-avaliacoes{grid-area: avaliacoes;}
+}
 
 /* ===== Rodapé ===== */
 .rodape {
