@@ -47,4 +47,9 @@ function filtrarPorNotaMinima(avaliacoes, notaMinima) {
  */
 function ordenarPorNota(avaliacoes, ordem) {
   ordem = ordem || "desc"
+  const copia = avaliacoes.slice()
+  copia.sort(function(a, b){
+    return ordem === "asc" ? a.nota - b.nota : b.nota - a.nota
+  })
+  return copia
 }
