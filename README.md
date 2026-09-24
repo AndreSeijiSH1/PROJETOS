@@ -3,7 +3,7 @@
 * fazer lição do figma até sábado dia 08/08/26✅
 * fazer lição do site responsivo de full stack até 08/08/26✅
 * 21/09 prova de banco de dados
-
+* 15/10 prova n2 estrutura de dados (prova no papel)
 
 
 
