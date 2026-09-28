@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <!--O Head seria como se fosse os metadados do nosso site, nada daqui aparece visualmente para o usuário-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sekai List</title>
+    <!----------------------------------------A importância dos links----------------------------------------------------
+    O navegador lê o arquivo HTML de cima para baixo, então o recomendado é sempre colocar os links css no head
+    para o navegador ler primeiro as guias de estilo antes de completar com o arquivo cru do html, ou seja, o CSS precisa
+    ser reconhecido antes para poder desenhar a página antes de chegar no HTML.
+    --------------------------------------------------------------------------------------------------------------------->
+
+    <!--Como o css está dentro de uma pasta e o html também está em uma pasta então precisamos usar os pontos para fazer isso ../css/style.css, 2 pontos fazem sair da pasta html e ir para a pasta de cima, se for um ponto ele vai localizar na própria pasta-->
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <!-------------------------------------------------header ou nav---------------------------------------------------------
+    O header é o bloco introdutório da página, é aquilo que o site identifica no topo de todas as páginas, como logo, nome e acesso ao perfil, Nav marca um bloco de links de navegação principal, é onde fica as grandes seções do site, as 2 não competem mas possuem objetivos diferentes e cabe a vc decidir qual vai fazer parte de quem
+    ------------------------------------------------------------------------------------------------------------------------->
+    <header>
+        <!--Diferença de um link para <a/>
+        Um link rel geralmente fica no head para conectar um recurso para a página, como linkar o css como o html, já o <a/> é o anchor uma âncora que liga para uma outra página, transformando uma zona clicável para o usuário interagir
+        -->
+        <a href="index.html">logo Sekai List</a><a href="conta.html">usuário</a>
+        <nav>
+            <!-----------------------------------------Bloco de menus do site------------------------------------------------->
+            <!--Colocar # no href apenas indica que ainda não criado o documento html para ter como referência-->
+            <ul>
+                <li><a href="#">Animes</a></li>
+                <li><a href="#">Mangás</a></li>
+                <li><a href="#">Avaliações</a></li>
+                <li><a href="#">Recomendações</a></li>
+                <li><a href="#">Fórum</a></li>
+                <li><a href="#">Notícias</a></li>
+            </ul>
+        </nav>
+        <form> <!-- Criação de um formulário-->
+            <label for="buscar">Pesquisar</label>
+            <!------------------------------------Explicando o campo de busca--------------------------------------------------
+            type indica que é um campo de busca.
+            o ID estamos dando um nome para esse campo de busca.
+            já o name indica o nome do pedido quando ele sai da página normalmente apelidam q de query
+            plcaceholder vai aparecer como um texto guia na hora do usuário digitar
+            ------------------------------------------------------------------------------------------------------------------>
+            <input type="search" id="buscar" name="q" placeholder="Pesquise aqui">
+            
+            <!--Colocar submit no butão fará o envio do formulário-->
+            <button type="submit">Buscar</button>
+        </form>
+    </header>
+
+    <main> <!-- Essa tag indica o conteúdo principal dessa página, e só pode existir uma por página-->
+
+        <section>
+            <!--------------------------------------O que é section e article--------------------------------------------------
+            Ele seria um caderno que vai possuir vários temas, e cada section precisa de um article, que seria todo o conteúdo dentro desse caderno, tendo começo meio e fim
+            ------------------------------------------------------------------------------------------------------------------>
+            <h1>Notícias</h1>
+
+            <article>
+                <ul>
+                    <li>
+                        <h2>teste1</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo quis repellendus vitae cumque officia ad officiis vel deserunt quae magni eius velit saepe asperiores consectetur, ducimus error sit inventore similique!</p>
+                    </li>
+                </ul>
+            </article>
+                        <article>
+                <ul>
+                    <li>
+                        <h2>teste1</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo quis repellendus vitae cumque officia ad officiis vel deserunt quae magni eius velit saepe asperiores consectetur, ducimus error sit inventore similique!</p>
+                    </li>
+                </ul>
+            </article>
+                        <article>
+                <ul>
+                    <li>
+                        <h2>teste1</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo quis repellendus vitae cumque officia ad officiis vel deserunt quae magni eius velit saepe asperiores consectetur, ducimus error sit inventore similique!</p>
+                    </li>
+                </ul>
+            </article>
+                        <article>
+                <ul>
+                    <li>
+                        <h2>teste1</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo quis repellendus vitae cumque officia ad officiis vel deserunt quae magni eius velit saepe asperiores consectetur, ducimus error sit inventore similique!</p>
+                    </li>
+                </ul>
+            </article>
+        </section>
+    </main>
+    <h1>teste</h1>
+</body>
+</html>
